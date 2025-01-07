@@ -127,10 +127,9 @@ Update related .ipynb and app.py file to also add your name.
 
 1. TO DO: Generate features-importance reports for available models.
 2. TO DO: Load industries-features.ipynb colab output into Run Models using parameters.yaml.
-3. TO DO: Add startyear and endyear to Streamlit interface, load from parameters.yaml.
-4. TO DO: Find a comparison process or pull accuracy reports (from Ivy's yaml or json files) into one tabulator table for viewing. See our [tabulator sample page](../../data-pipeline/timelines/tabulator/) for merging within javascript.
-5. TO DO: Reuse report display process for other models.
-6. TO DO: Automate updating "toy" feature data using Github Actions.
+3. TO DO: Find a comparison process or pull accuracy reports (from Ivy's yaml or json files) into one tabulator table for viewing. See our [tabulator sample page](../../data-pipeline/timelines/tabulator/) for merging within javascript.
+4. TO DO: Reuse report display process for other models.
+5. TO DO: Automate updating "toy" feature data using Github Actions.
 
 
 
