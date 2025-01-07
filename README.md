@@ -1,13 +1,9 @@
-[Active Projects](/projects)<a href="https://github.com/ModelEarth/RealityStream/" style="float:right">Github</a>
-# RealityStream
-Our primary development is in our [Run Models CoLab](input/industries).  
+
+Our [Run Models CoLab](input/industries) provides Logistic Regression, Support Vector Machines (SVM), MLP, RandomForest, XGBoost 
+
 Our main input is currently industry features by county for exploring environmental impact targets.  
 We are also creating [CoLabs for Exiobase International Trade Flow](/Openfootprint/trade).
 
-<!--
-**[Our Run Models Colab](input/industries)** provides Logistic Regression, Support Vector Machines (SVM), MLP, RandomForest, XGBoost  
-**[Our StreamLit App](streamlit)** provides Logistic Regression, RandomForest, Support Vector Machines (currently only for [Jobs: Reality-or-Fiction](output/jobs))
--->
 
 [Run-Models-bkup.ipynb](https://github.com/ModelEarth/RealityStream/tree/main/models) is a backup of the [Run Models CoLab](https://colab.research.google.com/drive/1zu0WcCiIJ5X3iN1Hd1KSW4dGn0JuodB8?usp=sharing) that we run locally. We append "-bkup" to indicate it is not the primary source.
 
@@ -52,10 +48,7 @@ You can add paths to external data by editing a copy of the [parameters.yaml](ht
 The term "features" is more prevalent in machine learning and data science.
 "factors" has a stronger association with statistics and social sciences. The term factors is used for impact attributes like emissions.
 
-TO DO: Add a python command that loads parameters.yaml to runs [Run-Models-bkup.ipynb](https://github.com/ModelEarth/RealityStream/tree/main/models) locally, so the user does not need to open a notebook. Pass a parameters.yaml path in. 
-
-The Run-Models-bkup.ipynb equivalent for our Streamlit version is app.py
-
+TO DO: Add a python command that loads parameters.yaml to run [Run-Models-bkup.ipynb](https://github.com/ModelEarth/RealityStream/tree/main/models) locally, so the user does not need to open a notebook. Pass a parameters.yaml path in. 
 
 Parameters are loaded from the parameters.yaml file:
 
@@ -63,8 +56,8 @@ Parameters are loaded from the parameters.yaml file:
 
 Some paths - only the first one is ready to use:  
 [parameters.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters.yaml) - Predicts bee population growth by industry  
-[parameters-years.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters-years.yaml) - For testing with multiple years and states
-[parameters-zip.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters-zip.yaml) - Needs zip code target  
+[parameters-years.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-years.yaml) - For testing with multiple years and states
+[parameters-zip.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-zip.yaml) - Needs zip code target  
 
 Example of parameters.yaml format:
 
