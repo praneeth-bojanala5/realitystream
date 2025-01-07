@@ -11,7 +11,6 @@ We are also creating [CoLabs for Exiobase International Trade Flow](/Openfootpri
 
 - [Run Models (CoLab)](input/industries) - For features and targets merged on their location columns.
 - [Models Overview](models)
-- [Accuracy Reports](output/jobs/) - Jobs Example
 
 In Run Models, the "features" dataset is merged with a 2-column "targets" dataset on-the-fly using either .csv files or Pandas to avoid storing merged .csv files. The location column joins features and targets.
 
@@ -31,10 +30,6 @@ Our default data will always use County Fips so features and targets align.
 
 **Trees (Target)** - County Fips
 [Tree Targets](input/trees/)
-
-
-**Jobs** - Not location-based yet
-<a href="models/reality-or-fiction/">Reality or Fiction</a>
 
 **Blinks** - Location is brain voxel columns - multiple locations have one target column
 <a href="models/random-bits-forest/">Random Bits Forest (Blinks)</a><br>
