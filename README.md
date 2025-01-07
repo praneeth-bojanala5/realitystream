@@ -44,7 +44,7 @@ Our default data will always use County Fips so features and targets align.
 <a href="models/random-bits-forest/">Random Bits Forest (Blinks)</a><br>
 
 
-You can add paths to external data by editing a copy of the [parameters.yaml](https://github.com/ModelEarth/RealityStream/blob/main/parameters.yaml) file.
+You can add paths to external data by editing a copy of the [parameters.yaml](https://github.com/ModelEarth/RealityStream/blob/main/parameters/parameters.yaml) file.
 
 
 ## Path Parameters
@@ -62,7 +62,7 @@ Parameters are loaded from the parameters.yaml file:
 	python Run-Models-bkup.ipynb [raw path to parameters.yaml]
 
 Some paths - only the first one is ready to use:  
-[parameters.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters.yaml) - Predicts bee population growth by industry  
+[parameters.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters.yaml) - Predicts bee population growth by industry  
 [parameters-years.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters-years.yaml) - For testing with multiple years and states
 [parameters-zip.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters-zip.yaml) - Needs zip code target  
 
