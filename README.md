@@ -63,7 +63,7 @@ Example of parameters.yaml format:
 	 	path: https://raw.githubusercontent.com/ModelEarth/community-timelines/main/training/naics{naics}/US/counties/{year}/US-{state}-training-naics{naics}-counties-{year}.csv
 	targets: bees
 		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets.csv
-	models: svc, rfc, lr, rbf, location-forest
+	models: lr, svc, rfc, rbf, xgboost
 
 <!-- For later
 	python Run-Models-bkup.ipynb [features] [target] [models]
@@ -76,9 +76,7 @@ Country (2-char), State (2-char), Fips (5-digits for state and county), Zip (5 c
 
 ### About setting the model in parameters.yaml
 
-Setting the models parameter to "all" would be the equivalent to "svc, rfc, lr, rbf, location-forest"  
-
-For now, the default model will be "rbf" (Random Bits Forest) when blank.
+Setting the models parameter to "all" would be the equivalent to "lr,rfc,rbf,svm,mlp,xgboost"  
 
 ### About path name shortcuts in parameters.yaml
 
