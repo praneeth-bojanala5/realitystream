@@ -1,9 +1,9 @@
 [RealityStream](../)
 # Models
 
-RealityStream merges feature and target datasets in Pandas, with the option to save CSV files.
+RealityStream merges feature and target datasets in Pandas, with the option to view training files in the CoLab's left panel by setting save_training=True.
 
-- [Run Models (Industries CoLab)](../input/industries)
+- [Run Models CoLab](../input/industries)
 - [Location Forest (Bees)](location-forest)
 - [Random Bits Forest (Blinks)](random-bits-forest)
 
