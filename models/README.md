@@ -4,11 +4,12 @@
 RealityStream merges feature and target datasets in Pandas,  
 or training files can be reviewed in the CoLab's left panel by setting save_training=True.
 
-Models join features and targets based on location IDs: county FIPS, zip codes, brain voxel, etc.
+Our model implementations join feature and target (Y=1) data based on location IDs:  
+Countries, States, County FIPS, Zip Codes, Brain Voxels (for eye blinks), etc.
 
 - [Run Models CoLab](../input/industries)
-- [Location Forest (Bees)](location-forest)
-- [Random Bits Forest (Blinks)](random-bits-forest)
+- [Random Forests for Healthy Bees](location-forest)
+- [Random Bits Forest for Eye Blinks](random-bits-forest)
 
 Select one or more models to run.
 
