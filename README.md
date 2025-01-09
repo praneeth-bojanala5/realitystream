@@ -124,5 +124,13 @@ Update related .ipynb and app.py file to also add your name.
 4. TO DO: Reuse report display process for other models.
 5. TO DO: Automate updating "toy" feature data using Github Actions.
 
+## Project Workflow Development Plan
+
+Beyond the machine learning Colab notebook, our goal is to build a complete workflow for this project, featuring a JavaScript user interface for the frontend, a backend service (potentially Flask) to execute the script, and the Colab notebook itself.
+
+**Project Structure**
+1. Frontend (JavaScript): A web-based interface that allows users to trigger actions and interact with the workflow.
+2. Backend (Flask or similar): A service to process requests from the frontend and execute the Colab notebook's logic.
+3. Colab Notebook: A machine learning notebook hosted in Google Colab or converted into an executable Python script for integration.
 
 
