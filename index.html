@@ -110,18 +110,6 @@ loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
         modelHashParams = ["features", "targets", "models"];
         insertHashValues(modelHashParams);
         function insertHashValues(modelHashParams) {
-          // Parse the current YAML content into a JavaScript object
-
-          /*
-          parsedContent = parseYAML(preContent);
-
-          traverseObject(hash);
-
-          // Convert the updated object back to YAML
-          preContent = convertToYAML(parsedContent);
-          preTag.innerHTML = preContent;
-          */
-
           // Main execution
           const addHashKeys = ["features", "targets", "models"];
           let parsedContent = parseYAML(preContent);
@@ -146,10 +134,6 @@ loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
             noCompatMode: true // Ensures compatibility with plain strings
           });
         }
-
-
-
-                
       }
     });
   </script>
