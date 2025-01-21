@@ -20,8 +20,7 @@ Backup and run locally in [models/location-forest](../../models/location-forest/
 [2-column Target tables](https://github.com/ModelEarth/RealityStream/tree/main/input/bees/targets) containing county Fips.
 
 
-We're updating our [Run Models colab](../industries/) to pull in 2-column bee target data for counties.
-
+[Our Run Models colab](../industries/) merges 2-column bee targets data for counties with features data with rows for industries and demographic data for each county.
 
 
 ### Bee Pollinators
