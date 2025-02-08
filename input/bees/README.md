@@ -57,7 +57,6 @@ This readme file contains a [**Google Colab notebook**](https://colab.research.g
 
 The goal is to calculate county-level bee population density and classify the top 20% as high-density (1). The notebook generates a csv file , containing FIPS codes and their binary classification (1 for high bee population density and 0 otherwise). 
 
-## Dataset: USDA Bee Population Data
 The **bee population dataset is stored as a CSV file** located at: bees/inputs/target/bee-population-usda.csv
 
 This dataset was sourced directly from the [**USDA Quick Stats**](https://quickstats.nass.usda.gov/) website and contains **county-level bee population data** for different years(2002,2007,2012,2017,2022) across all states in USA.
