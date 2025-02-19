@@ -50,12 +50,52 @@ Backup and run locally in [models/location-forest](../../models/location-forest/
 [Prior Bees Output](../../output/bees/)
 
 
-## Datasets
+# Bee Population Density Analysis
 
-Bee Pollinators USDA
-<!-- - [Bee Pollinator Decline](https://sustainableagriculture.net/blog/pnas-wild-bee-study/) -->
+## Overview
+This readme file contains a [**Google Colab notebook**](https://colab.research.google.com/drive/1X04_N4E-WpcNRrolB2VgnvMfa8It99ZW?usp=sharing) that processes and analyzes honeybee population data. The dataset comes from the [**USDA National Agricultural Statistics Service (NASS) Quick Stats**](https://quickstats.nass.usda.gov/), and geographic data is retrieved from the [**U.S. Census Bureau's GEOINFO API**](https://api.census.gov/data/2023/geoinfo?get=GEO_ID,NAME,AREALAND,AREAWATR&for=county:*).
+
+The goal is to calculate county-level bee population density and classify the top 20% as high-density (1). The notebook generates a csv file , containing FIPS codes and their binary classification (1 for high bee population density and 0 otherwise). 
+
+The **bee population dataset is stored as a CSV file** located at: bees/inputs/target/bee-population-usda.csv
+
+This dataset was sourced directly from the [**USDA Quick Stats**](https://quickstats.nass.usda.gov/) website and contains **county-level bee population data** for different years(2002,2007,2012,2017,2022) across all states in USA.
+
+### **Processing Steps**
+1. **Data Cleaning**:
+   - Entries with missing values or **"(D)"** (undisclosed data) are removed.
+   - The **county names** are converted to lowercase for consistency.
+
+2. **Fetching County-Level Land Area Data**:
+   - The **U.S. Census Bureau GEOINFO API** is used to retrieve **land area data for all U.S. counties**.
+   - County names and state names are extracted and formatted.
+   - The **total land area (in km²)** is computed for each county.
+
+3. **Merging Bee Population Data with Geographic Data**:
+   - The **bee population dataset (2017 data) is read from**:
+     ```
+     bees/inputs/target/bee-population-usda.csv
+     ```
+   - This dataset is filtered and merged with the **county land area dataset** using county names as the key.
+   - FIPS (Federal Information Processing Standards) codes are retained for location identification.
+
+4. **Bee Population Density Calculation**:
+   - Bee population density is computed as:
+     ```python
+     bee_population_density = bee_population / total_area_km²
+     ```
+   - This provides a **standardized metric** to compare bee populations across counties.
+
+5. **Creating a Binary Classification Target**:
+   - The top **20% of counties with the highest bee population density** are labeled as `1` (high-density), while others are labeled as `0`.
+   - This classification can be useful for **predictive modeling** in environmental studies.
+
+## How to Use
+1. **Open the Notebook** in Google Colab:
+   - [Colab Link](https://colab.research.google.com/drive/1X04_N4E-WpcNRrolB2VgnvMfa8It99ZW?usp=sharing)
+2. **Run All Code Cells**:
+   - The script will automatically load and process the data.
+3. **Modify the bee-data**:
+   - Adjust parameters in the bee-data dataframe to fetch data for different years or regions.
 
 
-<!--
-[Old CoLab](https://colab.research.google.com/drive/1o7HXhOl_NWhVm4Nn6L-sjDHsn0bokgeI?usp=sharing) 
--->
