@@ -5,5 +5,5 @@ features:
   path: https://raw.githubusercontent.com/ModelEarth/community-timelines/main/training/naics2/US/counties/2020/US-ME-training-naics2-counties-2020.csv
 targets:
   data: bees
-  path: https://raw.githubusercontent.com/ModelEarth/RealityStream/main/input/bees/targets/bees-population-usda.csv
+  path: https://raw.githubusercontent.com/ModelEarth/RealityStream/main/input/bees/targets/bees-targets-top-20-percent.csv
 models: rbf

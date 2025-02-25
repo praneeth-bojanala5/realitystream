@@ -52,7 +52,7 @@ Example of parameters.yaml format:
 		endyear: 2021
 	 	path: https://raw.githubusercontent.com/ModelEarth/community-timelines/main/training/naics{naics}/US/counties/{year}/US-{state}-training-naics{naics}-counties-{year}.csv
 	targets: bees
-		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-population-usda.csv
+		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
 	models: lr, svc, rfc, rbf, xgboost
 
 <!-- For later
@@ -82,7 +82,7 @@ That's the equivalent to:
 	features: industries
 	 	path: https://github.com/ModelEarth/RealityStream/raw/main/input/industries/features/industries-features.csv
 	targets: bees
-		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-population-usda.csv
+		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
 	models: rbf
 
 
@@ -90,15 +90,15 @@ The features.path and targets.path will have several shorthand versions and a fu
 
 **short** - bees  
 **medium** - input/bees/targets  
-**long** - input/bees/targets/bees-population-usda.csv  
-**full** - https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-population-usda.csv
+**long** - input/bees/targets/bees-targets-top-20-percent.csv  
+**full** - https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
 
 
 
 **Path processing rules:**
 If there's no slash / in a path parameter, start from the root of the RealityStream repo.
 If the file extension is omitted from a path, append .csv.
-For a target value of "bees" build the path "input/bees/targets/bees-population-usda.csv"
+For a target value of "bees" build the path "input/bees/targets/bees-targets-top-20-percent.csv"
 Replace a space with -targets- in the path.
 So for a target value of "bees increase2024" build the path "input/bees/targets/bees-targets-increase2024.csv"
 
