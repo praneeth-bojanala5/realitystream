@@ -44,13 +44,6 @@ Parameters are loaded from the parameters.yaml file:
 
 	python Run-Models-bkup.ipynb [raw path to parameters.yaml]
 
-Some paths - only the first one is ready to use:  
-[parameters-simple.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-simple.yaml) - TO DO: Test this simple version and modify CoLab if needed (no years, just Maine)
-[parameters.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters.yaml) - Predicts bee population growth by industry  
-[parameters-years.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-years.yaml) - For testing with multiple years and states (currently same as parameters.yaml)
-[parameters-zip.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-zip.yaml) - Needs zip code target  
-[parameters-blinks.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-blinks.yaml) - TO DO: Update CoLab for targets with no features.
-
 Example of parameters.yaml format:
 
 	folder: naics6-bees-counties
@@ -59,7 +52,7 @@ Example of parameters.yaml format:
 		endyear: 2021
 	 	path: https://raw.githubusercontent.com/ModelEarth/community-timelines/main/training/naics{naics}/US/counties/{year}/US-{state}-training-naics{naics}-counties-{year}.csv
 	targets: bees
-		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets.csv
+		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-population-usda.csv
 	models: lr, svc, rfc, rbf, xgboost
 
 <!-- For later
@@ -89,7 +82,7 @@ That's the equivalent to:
 	features: industries
 	 	path: https://github.com/ModelEarth/RealityStream/raw/main/input/industries/features/industries-features.csv
 	targets: bees
-		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets.csv
+		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-population-usda.csv
 	models: rbf
 
 
@@ -97,15 +90,15 @@ The features.path and targets.path will have several shorthand versions and a fu
 
 **short** - bees  
 **medium** - input/bees/targets  
-**long** - input/bees/targets/bees-targets.csv  
-**full** - https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets.csv
+**long** - input/bees/targets/bees-population-usda.csv  
+**full** - https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-population-usda.csv
 
 
 
 **Path processing rules:**
 If there's no slash / in a path parameter, start from the root of the RealityStream repo.
 If the file extension is omitted from a path, append .csv.
-For a target value of "bees" build the path "input/bees/targets/bees-targets.csv"
+For a target value of "bees" build the path "input/bees/targets/bees-population-usda.csv"
 Replace a space with -targets- in the path.
 So for a target value of "bees increase2024" build the path "input/bees/targets/bees-targets-increase2024.csv"
 

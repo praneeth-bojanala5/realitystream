@@ -9,7 +9,8 @@ Using county industry changes to predict honey bee populations.
 - [Colab for creating 2-columns targets](https://colab.research.google.com/drive/11R3nSxPn91yTUBWhANBgdKCX0-YV1Dtk#scrollTo=Y9Un4FVwnxth)
 
 NOTE: bees-targets.csv is a copy of bees-targets-increase2022.csv
-bees-targets.csv would be the default when the target path is simply "bees"
+bees-population-usda.csv is the top 20% of colony density (not change over time).
+bees-population-usda.csv is the default when the target path is simply "bees"
 
 Backup and run locally in [models/location-forest](../../models/location-forest/):
 
@@ -57,7 +58,7 @@ This readme file contains a [**Google Colab notebook**](https://colab.research.g
 
 The goal is to calculate county-level bee population density and classify the top 20% as high-density (1). The notebook generates a csv file , containing FIPS codes and their binary classification (1 for high bee population density and 0 otherwise). 
 
-The **bee population dataset is stored as a CSV file** located at: bees/inputs/target/bee-population-usda.csv
+The **bee population dataset is stored as a CSV file** located at: bees/inputs/target/bees-population-usda.csv
 
 This dataset was sourced directly from the [**USDA Quick Stats**](https://quickstats.nass.usda.gov/) website and contains **county-level bee population data** for different years(2002,2007,2012,2017,2022) across all states in USA.
 
@@ -74,7 +75,7 @@ This dataset was sourced directly from the [**USDA Quick Stats**](https://quicks
 3. **Merging Bee Population Data with Geographic Data**:
    - The **bee population dataset (2017 data) is read from**:
      ```
-     bees/inputs/target/bee-population-usda.csv
+     bees/inputs/target/bees-population-usda.csv
      ```
    - This dataset is filtered and merged with the **county land area dataset** using county names as the key.
    - FIPS (Federal Information Processing Standards) codes are retained for location identification.
