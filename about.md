@@ -26,7 +26,7 @@ Our default data will always use County Fips so features and targets align.
 **Trees (Target)** - County Fips
 [Tree Targets](input/trees/)
 
-**Blinks** - Location is brain voxel columns - multiple locations have one target column
+**Blinks** - Rows are clusters of brain voxels - hence multiple locations have one target column
 <a href="models/random-bits-forest/">Random Bits Forest (Blinks)</a><br>
 
 
