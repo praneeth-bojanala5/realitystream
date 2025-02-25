@@ -10,7 +10,10 @@ We are also creating [CoLabs for Exiobase International Trade Flow](https://mode
 
 **Feb 25, 2025** - Changed [bee data](input/bees) target from bees-targets.csv to bees-targets-top-20-percent.csv. This new target uses the top 20% of counties with the highest bee population density.
 
-<!-- parameters.yaml was using density file: bees-targets-top-20-percent.csv -->
+<!--
+Density file: bees-targets-top-20-percent.csv. Shashank worked from bees-population-usda.csv
+(We previously used growth over time with the file bees-targets.csv)
+-->
 
 Select a default yaml file. First one (and possibly blinks) is ready to use:  
 [parameters-simple.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-simple.yaml) - TO DO: Test this simple version and modify CoLab if needed (no years, just Maine)
