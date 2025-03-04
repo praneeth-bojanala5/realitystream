@@ -8,7 +8,7 @@ We are also creating [CoLabs for Exiobase International Trade Flow](https://mode
 
 <h2>Design your Stream</h2>
 
-**Feb 25, 2025** - Changed [bee data](input/bees) target from bees-targets.csv to bees-targets-top-20-percent.csv. This new target uses the top 20% of counties with the highest bee population density.
+**Bee YAML Updated** - Changed [bee data](input/bees) target to bees-targets-top-20-percent.csv in parameters yaml. This new "colony density" target uses the top 20% of counties with the highest bee population density (rather than top colony growth between years, as was used in bees-targets.csv).
 
 <!--
 Density file: bees-targets-top-20-percent.csv. Shashank worked from bees-population-usda.csv

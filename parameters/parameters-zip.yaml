@@ -9,5 +9,5 @@ features:
   path: https://raw.githubusercontent.com/ModelEarth/community-zipcodes/main/industries/naics{naics}/US/zip/{state}/US-{state}-census-naics{naics}-zip-{year}.csv
 targets:
   data: bees
-  path: https://raw.githubusercontent.com/ModelEarth/RealityStream/main/input/bees/targets/bees-targets.csv
+  path: https://raw.githubusercontent.com/ModelEarth/RealityStream/main/input/bees/targets/bees-targets-top-20-percent.csv
 models: rbf
