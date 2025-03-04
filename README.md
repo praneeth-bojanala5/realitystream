@@ -15,11 +15,8 @@ Density file: bees-targets-top-20-percent.csv. Shashank worked from bees-populat
 (We previously used growth over time with the file bees-targets.csv)
 -->
 
-We're still using the older bees-targets.csv (population growth) until merge of bees-targets-top-20-percent.csv (population density) is fixed.
-Possible Fix: In the Run Models CoLab, drop incoming feature rows when no matching target row is found.
-
-Select a default yaml file. First one (and possibly blinks) is ready to use:  
-[parameters-simple.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-simple.yaml) - TO DO: Test this simple version and modify CoLab if needed (no years, just Maine)
+Copy and paste one of the following or use the CoLabs default settings:
+[parameters-simple.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-simple.yaml) - 2020, just Maine
 [parameters.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters.yaml) - Predicts bee density by industry  
 [parameters-years.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-years.yaml) - For testing with multiple years and states (currently same as parameters.yaml).  Uses bee populatin growth.
 [parameters-zip.yaml](https://raw.githubusercontent.com/ModelEarth/RealityStream/main/parameters/parameters-zip.yaml) - Needs zip code target. Uses bee populatin growth.  
