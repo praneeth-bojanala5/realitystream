@@ -1,5 +1,5 @@
 [RealityStream](../)
-# Models
+# ML Models
 
 RealityStream merges feature and target datasets in Pandas,  
 or training files can be reviewed in the CoLab's left panel by setting save_training=True.
