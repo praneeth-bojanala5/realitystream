@@ -1,17 +1,17 @@
 [RealityStream](../)
-# ML Models
+# RealityStream ML Forecasting Models
 
-RealityStream merges feature and target datasets in Pandas,  
-or training files can be reviewed in the CoLab's left panel by setting save_training=True.
-
-Our model implementations join feature and target (Y=1) data based on location IDs:  
-Countries, States, County FIPS, Zip Codes, Brain Voxels (for eye blinks), etc.
+Our model implementations join feature and target (Y=1) data based on location IDs.  
+Scope includes: Countries, States, County FIPS, Zip Codes, and Brain Voxels (for eye blinks).
 
 - [Run Models CoLab](../input/industries)
 - [Random Forests for Healthy Bees](location-forest)
 - [Random Bits Forest for Eye Blinks](random-bits-forest)
 
-Select one or more models to run.
+The Run Modles colab merges feature and target datasets in Pandas.  
+Training files can be reviewed by setting save_training=True.
+
+Select one or more models, then paste the resulting yaml in the Run Models CoLab.
 
 ## <input type="checkbox" id="model-lr" name="model" value="lr"> Logistic Regression (lr)
 - **Type**: Linear model for binary classification (extendable to multiclass).
@@ -87,4 +87,4 @@ Do Google search algorithms direct people toward training that results in a bett
 [Does expanding access to Starlink actually help increase tree canopy?](https://www.yahoo.com/news/elon-musk-diplomacy-woo-wing-155604090.html) In Brazil, Starlink was slated to provide internet connectivity to 19,000 rural schools, along with environmental monitoring of the Amazon. Let's explore changes to [world forest coverage over time](/data-commons/docs/conservation/).
 -->
 
-Paste the resulting parameters list in the third step of the [Run Models CoLab](../input/industries)
+Paste the resulting yaml parameters list into the second step of the [Run Models CoLab](../input/industries).
