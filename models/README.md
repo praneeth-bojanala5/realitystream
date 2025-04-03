@@ -34,7 +34,10 @@ Select one or more models, then paste the resulting yaml in the Run Models CoLab
 - **Common Use**: High-dimensional binary datasets, one-hot encoded data.
 - **Limitations**: May not perform as well on general-purpose or continuous feature datasets.
 
-## <input type="checkbox" id="model-svm" name="model" value="svm"> Support Vector Machines (svm)
+## <input type="checkbox" id="model-svm" name="model" value="svm"> Support Vector Machines (svm) - Runs Slow
+
+Runs slow (over an hour), best to avoid for now.
+
 - **Type**: Supervised learning algorithm for classification and regression.
 - **Key Feature**: Maximizes the margin between classes, supports non-linear relationships via kernel tricks.
 - **Best for**: Small to medium-sized, high-dimensional datasets with well-separated classes.
