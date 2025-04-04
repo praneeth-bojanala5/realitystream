@@ -20,14 +20,14 @@ Select one or more models, then paste the resulting yaml in the Run Models CoLab
 - **Common Use**: Medical diagnostics, marketing (e.g., churn prediction), financial risk.
 - **Limitations**: Struggles with non-linear relationships and complex patterns.
 
-## <input type="checkbox" id="model-rfc" name="model" value="rfc"> Random Forests (rfc)
+## <input type="checkbox" id="model-rfc" name="model" value="rfc"> Random Forest Classifier (rfc)
 - **Type**: Ensemble of decision trees using bootstrapping and random feature selection.
 - **Key Feature**: Reduces overfitting and variance through randomness and averaging.
 - **Best for**: Diverse data types, handles outliers, missing data, and categorical features.
 - **Common Use**: Fraud detection, bioinformatics, credit scoring.
 - **Limitations**: Less interpretable, computationally expensive with large datasets.
 
-## <input type="checkbox" id="model-rbf" name="model" value="rbf"> Random Bits Forests (rbf)
+## <input type="checkbox" id="model-rbf" name="model" value="rbf"> Random Bits Forest (rbf)
 - **Type**: Variation of Random Forests using bit-based transformations for feature splitting.
 - **Key Feature**: Efficient handling of high-dimensional, binary, or sparse data.
 - **Best for**: Cybersecurity, large-scale categorical or binary feature data.
