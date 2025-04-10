@@ -108,11 +108,12 @@ Replace TO DO with your name as you work on a project.
 Write Loren when you've submitted a pull request to show your name.  
 Update related .ipynb and app.py file to also add your name.
 
-1. TO DO: Generate features-importance reports for available models.
-2. TO DO: Load industries-features.ipynb colab output into Run Models using parameters.yaml.
-3. TO DO: Find a comparison process or pull accuracy reports (from Ivy's yaml or json files) into one tabulator table for viewing. See our [tabulator sample page](../../data-pipeline/timelines/tabulator/) for merging within javascript.
-4. TO DO: Reuse report display process for other models.
-5. TO DO: Automate updating "toy" feature data using Github Actions.
+1. DONE: Generate features-importance reports for available models - Melody and Yogesh.
+2. DONE: Add a comparison process for accuracy reports into one table for viewing. - Melody
+3. IN PROGRESS: Send files to Github - Yogesh
+
+Additional TO DO's reside at the top of the [Run Models colab](https://colab.research.google.com/drive/1zu0WcCiIJ5X3iN1Hd1KSW4dGn0JuodB8?usp=sharing).
+
 
 ## Project Workflow Development Plan
 
