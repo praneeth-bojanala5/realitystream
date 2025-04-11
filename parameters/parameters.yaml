@@ -1,5 +1,6 @@
 folder: naics6-bees-counties
-features: 
+save-training: false
+features:
   data: industries
   startyear: 2017
   endyear: 2021
