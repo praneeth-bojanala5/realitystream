@@ -10,7 +10,7 @@ We also support feature files that already contain a target column, like the [ey
 Location column data types:  
 World Region (TBD), Country (2-char), State (2-char), County Fips (5-digits for state and county), Zip (5 char, 6 in China), or Brain Voxel (2 char)
 
-The target does not need to a location ID. It can be an ID that clusters multiple location, as is the case for Brain Voxels that fire together when eye blinks occur. View [eye blink data .csv file](https://github.com/ModelEarth/RealityStream/blob/main/models/random-bits-forest/blinks-input.csv) - each column is a voxel (location in brain).
+The target does not need to a location ID. It can be an ID that clusters multiple location, as is the case for Brain Voxels that fire together when eye blinks occur. View [eye blink data .csv file](https://github.com/ModelEarth/realitystream/blob/main/models/random-bits-forest/blinks-input.csv) - each column is a voxel (location in brain).
 
 ## Default Data Sources
 
@@ -30,7 +30,7 @@ Our default data will always use County Fips so features and targets align.
 <a href="models/random-bits-forest/">Random Bits Forest (Blinks)</a><br>
 
 
-You can add paths to external data by editing a copy of the [parameters.yaml](https://github.com/ModelEarth/RealityStream/blob/main/parameters/parameters.yaml) file.
+You can add paths to external data by editing a copy of the [parameters.yaml](https://github.com/ModelEarth/realitystream/blob/main/parameters/parameters.yaml) file.
 
 
 ## Path Parameters
@@ -38,7 +38,7 @@ You can add paths to external data by editing a copy of the [parameters.yaml](ht
 The term "features" is more prevalent in machine learning and data science.
 "factors" has a stronger association with statistics and social sciences. The term factors is used for impact attributes like emissions.
 
-TO DO: Add a python command that loads parameters.yaml to run [Run-Models-bkup.ipynb](https://github.com/ModelEarth/RealityStream/tree/main/models) locally, so the user does not need to open a notebook. Pass a parameters.yaml path in. 
+TO DO: Add a python command that loads parameters.yaml to run [Run-Models-bkup.ipynb](https://github.com/ModelEarth/realitystream/tree/main/models) locally, so the user does not need to open a notebook. Pass a parameters.yaml path in. 
 
 Parameters are loaded from the parameters.yaml file:
 
@@ -52,7 +52,7 @@ Example of parameters.yaml format:
 		endyear: 2021
 	 	path: https://raw.githubusercontent.com/ModelEarth/community-timelines/main/training/naics{naics}/US/counties/{year}/US-{state}-training-naics{naics}-counties-{year}.csv
 	targets: bees
-		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
+		path: https://github.com/ModelEarth/realitystream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
 	models: lr, svc, rfc, rbf, xgboost
 
 <!-- For later
@@ -80,9 +80,9 @@ The simplest form of the parameters.yaml would be:
 That's the equivalent to:
 
 	features: industries
-	 	path: https://github.com/ModelEarth/RealityStream/raw/main/input/industries/features/industries-features.csv
+	 	path: https://github.com/ModelEarth/realitystream/raw/main/input/industries/features/industries-features.csv
 	targets: bees
-		path: https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
+		path: https://github.com/ModelEarth/realitystream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
 	models: rbf
 
 
@@ -91,7 +91,7 @@ The features.path and targets.path will have several shorthand versions and a fu
 **short** - bees  
 **medium** - input/bees/targets  
 **long** - input/bees/targets/bees-targets-top-20-percent.csv  
-**full** - https://github.com/ModelEarth/RealityStream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
+**full** - https://github.com/ModelEarth/realitystream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
 
 
 

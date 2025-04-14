@@ -2,4 +2,4 @@
 
 # Bees: Location Forest
 
-View [2-column tables](https://github.com/ModelEarth/RealityStream/tree/main/input/bees/targets) with Fips and Target.
+View [2-column tables](https://github.com/ModelEarth/realitystream/tree/main/input/bees/targets) with Fips and Target.

@@ -29,7 +29,7 @@ Backup and run locally @ input/industries/features/industries-features-bkup.ipyn
 
 [Tree Canopy improvements](https://model.earth/data-commons/docs/conservation/), Improvements in [Emissions](https://model.earth/data-commons/docs/air/) by state and country, [Honey Bee Populations](../../input/bees/).
 
-Our [Geneate Industry Features Colab](https://colab.research.google.com/drive/1HJnuilyEFjBpZLrgxDa4S0diekwMeqnh?usp=sharing) provides a simple sample of processing multiple years from [parameters.yaml](https://github.com/ModelEarth/RealityStream/blob/main/parameters/parameters.yaml)  
+Our [Geneate Industry Features Colab](https://colab.research.google.com/drive/1HJnuilyEFjBpZLrgxDa4S0diekwMeqnh?usp=sharing) provides a simple sample of processing multiple years from [parameters.yaml](https://github.com/ModelEarth/realitystream/blob/main/parameters/parameters.yaml)  
 
 **Industry Targets**
 

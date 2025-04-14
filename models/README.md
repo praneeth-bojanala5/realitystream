@@ -75,8 +75,8 @@ Features and targets are merged on locations (fips, voxels, foods)
 | Inflow | Basket of Goods| Outflow | Predicted Results |
 | ----------- | ----------- | ----------- | ----------- |
 | [Suppliers](/data-pipeline/research/economy/) | [Commodities](/localsite/info/) | [Products](https://github.com/ModelEarth/profile/tree/main/products/US) | [Impact on Environment](/community/tools/) |
-| [Stimulus ML](../blinks/) | Brain Waves | [Brain Voxels Firing](/RealityStream/models/random-bits-forest/) | [Eye Blinks](/RealityStream/output/blinks/) |
-| [Local Industries](/localsite/info/) | Honey Bees | [Population Change](/data-pipeline/research/bees/) | [Healthy Bee Population](/RealityStream/output/bees) |
+| [Stimulus ML](../blinks/) | Brain Waves | [Brain Voxels Firing](/realitystream/models/random-bits-forest/) | [Eye Blinks](/realitystream/output/blinks/) |
+| [Local Industries](/localsite/info/) | Honey Bees | [Population Change](/data-pipeline/research/bees/) | [Healthy Bee Population](/realitystream/output/bees) |
 | [Local Industries](/localsite/info/) | [Tree Canopy](/data-commons/docs/conservation/) | Biodiversity Change | Healthy Forest Growth |
 | [Ingredients](/data-commons/docs/food/) | [Healthy Meals](/profile/item) | [Nutrients](/balance/) | [Impact on Body](/balance/label_checker.html) |
 -->
