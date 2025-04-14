@@ -1,4 +1,4 @@
-Our [Run Models CoLab](input/industries) provides Logistic Regression, Support Vector Machines (SVM), MLP, RandomForest, XGBoost 
+Our [Run Models CoLab](input/industries) provides Logistic Regression, Support Vector Machines (SVM), MLP, RandomForest, XGBoost.
 
 Our main input is currently industry features by county for exploring environmental impact targets.  
 We are also creating [CoLabs for Exiobase International Trade Flow](https://model.earth/profile/trade).
