@@ -2,7 +2,7 @@
 
 # Random Bits Forest (RBF)
 
-Predicting eye blinks. Hyperparameter Tuning identifies which brain voxels are the best predictors for blinks. In the [target "y" column](https://github.com/ModelEarth/RealityStream/blob/main/models/random-bits-forest/blinks-input.csv), a 1 indicates a blink.
+Predicting eye blinks. Hyperparameter Tuning identifies which brain voxels are the best predictors for blinks. In the [target "y" column](https://github.com/ModelEarth/realitystream/blob/main/models/random-bits-forest/blinks-input.csv), a 1 indicates a blink.
 
 Testing accuracy of 93% after tuning, from 88% with default parameters before tuning.
 

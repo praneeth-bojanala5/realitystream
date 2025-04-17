@@ -12,6 +12,7 @@
 
 <script>
 loadMarkdown("README.md", "readmeDiv", "_parent");
+loadMarkdown("about.md", "aboutDiv", "_parent");
 loadMarkdown("input/bees/README.md", "beesDiv", "_parent");
 loadMarkdown("input/blinks/README.md", "blinksDiv", "_parent");
 loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
@@ -21,6 +22,116 @@ loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
 <body>
 
 <div class="content contentpadding">
+
+  <script>
+// Function to parse YAML content from the paramText element
+function parseYamlContent() {
+  const paramTextElement = document.getElementById('paramText');
+  const yamlContent = paramTextElement.textContent || paramTextElement.innerText;
+  return yamlContent;
+}
+
+// Function to convert YAML to URL parameters
+function yamlToUrlParams(yamlStr) {
+  // Simple YAML parser for this specific format
+  const lines = yamlStr.split('\n');
+  const params = {};
+  
+  let currentKey = null;
+  let currentIndent = 0;
+  
+  for (const line of lines) {
+    if (line.trim() === '' || line.trim().startsWith('#')) continue;
+    
+    const indent = line.search(/\S|$/);
+    const colonIndex = line.indexOf(':');
+    
+    if (colonIndex > 0) {
+      const key = line.substring(0, colonIndex).trim();
+      let value = line.substring(colonIndex + 1).trim();
+      
+      if (indent === 0) {
+        // Top level key
+        currentKey = key;
+        if (value) {
+          params[key] = value;
+        } else {
+          params[key] = {};
+        }
+      } else if (indent > currentIndent) {
+        // Sub-key
+        if (!params[currentKey]) {
+          params[currentKey] = {};
+        }
+        
+        if (value) {
+          params[currentKey][key] = value;
+        } else {
+          params[currentKey][key] = {};
+        }
+      }
+      
+      currentIndent = indent;
+    } else if (line.trim().startsWith('-')) {
+      // Handle array items
+      const value = line.trim().substring(1).trim();
+      
+      if (!Array.isArray(params[currentKey])) {
+        params[currentKey] = [];
+      }
+      
+      params[currentKey].push(value);
+    }
+  }
+  
+  // Convert to URL hash format
+  const hashParams = [];
+  
+  for (const [key, value] of Object.entries(params)) {
+    if (typeof value === 'string') {
+      hashParams.push(`${key}=${encodeURIComponent(value)}`);
+    } else if (Array.isArray(value)) {
+      hashParams.push(`${key}=${encodeURIComponent(value.join(','))}`);
+    } else if (typeof value === 'object') {
+      for (const [subKey, subValue] of Object.entries(value)) {
+        if (typeof subValue === 'string') {
+          hashParams.push(`${key}_${subKey}=${encodeURIComponent(subValue)}`);
+        }
+      }
+    }
+  }
+  
+  return hashParams.join('&');
+}
+
+// Function to create the click handler for links
+function setupLinkClickHandlers() {
+  document.addEventListener('click', function(event) {
+    // Check if the clicked element is a link
+    if (event.target.tagName === 'A') {
+      event.preventDefault();
+      
+      // Get YAML content and convert to URL parameters
+      const yamlContent = parseYamlContent();
+      const urlParams = yamlToUrlParams(yamlContent);
+      
+      // Create the final URL
+      const redirectUrl = `/data-commons/docs/data/#${urlParams}`;
+      
+      // Redirect to the new URL
+      console.log("Redirecting to:", redirectUrl);
+      window.location.href = redirectUrl;
+    }
+  });
+}
+
+// Initialize when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  setupLinkClickHandlers();
+  console.log("YAML to URL parameter converter initialized");
+});
+  </script>
+  
 
   <style>
     #paramText {
@@ -138,16 +249,22 @@ loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
     });
   </script>
 
-<a href="/projects">Active Projects</a><a href="https://github.com/ModelEarth/RealityStream/" style="float:right">Github</a>
+<div style="position:absolute; z-index:2; right:28px; top:110px">
+  <a href="https://github.com/ModelEarth/realitystream/"><img src="../localsite/img/icon/github/github.png" style="width:42px"></a>
+</div>
+
+<a href="/projects">Active Projects</a>
 <h1>RealityStream</h1>
 
-  <div style="float:right">
-    Choose: <a href="/localsite/info/">features</a> | 
-    <a href="/data-commons/docs/data/">targets</a> | 
-    <a href="models">models</a>
-  </div>
-  <b>Design your stream</b> - Edit and paste into the third step of the <a href="/RealityStream/input/industries/">Run Models CoLab</a><br>
-  <div id="paramText" class="codetext" rows="10" contenteditable><pre>
+<div id="readmeDiv"></div>
+
+<div style="float:right">
+  Choose: <a href="/localsite/info/">features</a> | 
+  <a href="/data-commons/docs/data/">targets</a> | 
+  <a href="models">models</a>
+</div>
+Edit your yaml and paste into the second code step (third panel) of the <a href="/realitystream/input/industries/">Run Models CoLab</a><br>
+<div id="paramText" class="codetext" rows="10" contenteditable><pre>
 <b>folder:</b> naics6-bees-counties
 
 <b>features:</b>
@@ -157,13 +274,13 @@ loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
 
 <b>targets:</b>
   data: bees
-  path: https://raw.githubusercontent.com/ModelEarth/RealityStream/main/input/bees/targets/bees-targets.csv
+  path: https://raw.githubusercontent.com/ModelEarth/realitystream/main/input/bees/targets/bees-targets-top-20-percent.csv
 
 <b>models:</b> xgboost
 </pre></div>
 
 
-  <div id="readmeDiv"></div>
+  <div id="aboutDiv"></div>
   <div id="pathDiv"></div><br>
 
   <div class="pagecard">
