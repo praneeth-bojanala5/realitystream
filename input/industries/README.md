@@ -3,17 +3,19 @@
 # Run Models Colab
 
 **Our primary CoLab:**
-[Run Models](https://colab.research.google.com/drive/1zu0WcCiIJ5X3iN1Hd1KSW4dGn0JuodB8?usp=sharing) (Includes XGBoost) - Merges Features with Targets based on parameters.yaml
-Backup and run locally @ models/Run-Models-bkup.ipynb
+Open the colab [Run Models](https://colab.research.google.com/drive/1zu0WcCiIJ5X3iN1Hd1KSW4dGn0JuodB8?usp=sharing) (Includes XGBoost) - Merges Features with Targets based on parameters.yaml
+Backup resides at realitystream/models/Run-Models-bkup.ipynb
+
+**GPU SUPPORT using cuML** In your browser, when using the Run Models notebook, change the runtime type to get the latest speedups from cuML.
 
 Data prep for [Industry Features and Targets](../../../data-pipeline/timelines)
 
-**Cool processes we're implementing in the Run Models CoLab**
-- Toggle between pulling data from Github and local files
-- Choose to send results to display, Github and/or local files
-- Allow user to save their own Github account in local storage
-- Build a yaml file from localStorage that the user can paste or pull into CoLab.
-- Run data updates automatically quarterly with Github Actions, send a report
+**TO DO**
+- Send report files to Github as last step in Run Models colab
+- Fetch an index.html file from a Github link and send it to the report folder.
+- Allow user to save their own Github account using a field near top of colab.
+- Store multiple a yaml configs in user's browser localStorage
+- Run data updates automatically quarterly with Github Actions
 
 ## Features Data
 
