@@ -1,5 +1,8 @@
-**CONTEXT**  
-_Run_Models.ipynb_ already delivers a well‑structured CPU workflow—data ingestion, preprocessing, SMOTE for class imbalance, model training and evaluation. Parameter widgets let analysts experiment easily. The goal of this report is to identify the hurdles that appear when we try to enable a cuML (GPU) path and to outline minimal, targeted changes that unlock NVIDIA T4‑GPU performance in Google Colab while preserving the notebook’s familiar layout.
+# cuML (GPU) path
+
+In the following, we identify the hurdles that appear when enablimg a cuML (GPU) path and we outline minimal, targeted changes that unlock NVIDIA T4‑GPU performance in our RunModels Google Colab while preserving the notebook’s familiar layout.
+
+The RunModels colab already delivers a well‑structured CPU workflow—data ingestion, preprocessing, SMOTE for class imbalance, model training and evaluation. Parameter widgets let analysts experiment easily. 
 
 **IDENTIFIED TECHNICAL ISSUES**
 
@@ -8,9 +11,11 @@ _Run_Models.ipynb_ already delivers a well‑structured CPU workflow—data inge
     • Cell 11 tries from imblearn.over_sampling import SMOTE before the package exists.  
     • Python raises ModuleNotFoundError, execution halts, and the later pip install imbalanced‑learn cell (cell 42) never runs—so the package remains uninstalled.  
     • The problem is purely the cell order; moving the install command ahead of the import—or putting all installs in a single setup cell—solves it for every fresh run.
+
 2. **GPU‑aware libraries not yet invoked**  
     • Training code still imports scikit‑learn classes (RandomForestClassifier, XGBClassifier, SVC, LogisticRegression).  
     • Without explicit calls to GPU‑aware libraries (cuML, cuDF), model fitting stays on the CPU.
+
 3. **Version‑collision risk: cuML vs. imbalanced‑learn**  
     • RAPIDS/cuML 24.04 pins **scikit‑learn** at 1.2.  
     • Newer **imbalanced‑learn** releases (0.13 +) require **scikit‑learn** 1.3 +.  
@@ -36,6 +41,7 @@ _Run_Models.ipynb_ already delivers a well‑structured CPU workflow—data inge
 | XGBClassifier (CPU) | cuml.experimental.XGBClassifier | Wraps CUDA build | 5 min → 30 s |
 | SVC | cuml.svm.SVC | Same methods | Minutes → seconds |
 | LogisticRegression | cuml.linear_model.LogisticRegression | Only penalty='l2' needed | Sub‑second fit |
+<br>
 
 **D. Class‑imbalance handling**
 
@@ -67,6 +73,7 @@ _Run_Models.ipynb_ already delivers a well‑structured CPU workflow—data inge
 | RAPIDS API changes | Pin RAPIDS 24.04; monthly smoke‑test against nightly build. |
 | SMOTENC instability | Off by default; flag toggles it. |
 | Colab image drift | Install cell pins versions every run. |
+<br>
 
-**Conclusion**  
+## Conclusion
 Re‑ordering one install, adding a single setup cell, converting data once, and swapping four import lines delivers GPU acceleration without rewriting the notebook, preserves accuracy, and positions the project for future GPU‑centric enhancements.
