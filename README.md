@@ -18,7 +18,7 @@ Density file: bees-targets-top-20-percent.csv. Shashank worked from bees-populat
 (We previously used growth over time with the file bees-targets.csv)
 -->
 
-Copy and paste one of the following or use the CoLabs default settings:
+In the CoLab, a select menu allows you to choose default parameter yaml paths set in [parameter-paths.csv](https://github.com/ModelEarth/realitystream/blob/main/parameters/parameter-paths.csv).
 [parameters-simple.yaml](https://raw.githubusercontent.com/ModelEarth/realitystream/main/parameters/parameters-simple.yaml) - 2020, just Maine
 [parameters.yaml](https://raw.githubusercontent.com/ModelEarth/realitystream/main/parameters/parameters.yaml) - Predicts bee density by industry  
 [parameters-years.yaml](https://raw.githubusercontent.com/ModelEarth/realitystream/main/parameters/parameters-years.yaml) - For testing with multiple years and states (currently same as parameters.yaml).  Uses bee populatin growth.
