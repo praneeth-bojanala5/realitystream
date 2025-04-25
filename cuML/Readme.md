@@ -5,7 +5,7 @@ In the following, we identify the hurdles that appear when enablimg a cuML (GPU)
 The RunModels colab already delivers a well‑structured CPU workflow—data ingestion, preprocessing, SMOTE for class imbalance, model training and evaluation. Parameter widgets let analysts experiment easily. 
 
 ## Updates made for cuML
-We re‑ordered to one install, added a single setup cell, converted data once, swapped four import lines delivers GPU acceleration without rewriting the notebook. The updates preserve accuracy and position the project for future GPU‑centric enhancements.  
+We re‑ordered to one install, added a single setup cell, converted data once, swapped four import lines for GPU acceleration without rewriting the notebook. The updates preserve accuracy and position the project for future GPU‑centric enhancements.  
 -&nbsp;Srivatsav and Gayathri
 
 
