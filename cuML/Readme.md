@@ -4,6 +4,10 @@ In the following, we identify the hurdles that appear when enablimg a cuML (GPU)
 
 The RunModels colab already delivers a well‑structured CPU workflow—data ingestion, preprocessing, SMOTE for class imbalance, model training and evaluation. Parameter widgets let analysts experiment easily. 
 
+## Updates made for cuML
+We re‑ordered to one install, added a single setup cell, converted data once, swapped four import lines delivers GPU acceleration without rewriting the notebook. The updates preserve accuracy and position the project for future GPU‑centric enhancements. -&nbsp;Srivatsav&nbsp;and&nbsp;Gayathri
+
+
 **IDENTIFIED TECHNICAL ISSUES**
 
 1. **imbalanced‑learn installation never executes in a clean, sequential run**  
@@ -73,7 +77,3 @@ The RunModels colab already delivers a well‑structured CPU workflow—data ing
 | RAPIDS API changes | Pin RAPIDS 24.04; monthly smoke‑test against nightly build. |
 | SMOTENC instability | Off by default; flag toggles it. |
 | Colab image drift | Install cell pins versions every run. |
-<br>
-
-## Conclusion
-Re‑ordering one install, adding a single setup cell, converting data once, and swapping four import lines delivers GPU acceleration without rewriting the notebook, preserves accuracy, and positions the project for future GPU‑centric enhancements.
