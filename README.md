@@ -6,7 +6,7 @@ We are also creating [CoLabs for Exiobase International Trade Flow](https://mode
 
 [Run-Models-bkup.ipynb](https://github.com/ModelEarth/realitystream/tree/main/models) is a backup of the [Run Models CoLab](https://colab.research.google.com/drive/1zu0WcCiIJ5X3iN1Hd1KSW4dGn0JuodB8?usp=sharing) that we run locally. We append "-bkup" to indicate it is not the primary source.
 
-Learn about our [cuML GPU speed enhancements](cuML)
+Learn about our [cuML GPU speed enhancements - and SMOTE balancing of our classes](cuML)
 We're using [SHAP to explain our model predictions](shap)
 
 <h2>Design your Stream</h2>

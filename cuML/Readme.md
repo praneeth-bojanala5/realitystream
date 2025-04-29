@@ -4,6 +4,22 @@ In the following, we identify the hurdles that appear when enablimg a cuML (GPU)
 
 The RunModels colab already delivers a well‑structured CPU workflow—data ingestion, preprocessing, SMOTE for class imbalance, model training and evaluation. Parameter widgets let analysts experiment easily. 
 
+### SMOTE - Improves generalization, but accuracy will decline a little
+
+Before SMOTE:
+
+- **The dataset may initially be heavily imbalanced**, so models easily memorized the dominant class.
+
+- As the validation split preserved the imbalance, models posted **inflated high scores** without truly learning minority patterns.
+
+After SMOTE:
+
+- SMOTE **balanced the classes**, forcing models to actually learn.
+
+- Consequently, **accuracy and F1 scores dropped**, but **generalization improved**.
+
+- Models now have to predict more than just the obvious — exposing weaknesses (especially in SVM).
+
 ## Updates made for cuML
 We re‑ordered to one install, added a single setup cell, converted data once, swapped four import lines for GPU acceleration without rewriting the notebook. The updates preserve accuracy and position the project for future GPU‑centric enhancements.  
 -&nbsp;Srivatsav and Gayathri
