@@ -1,7 +1,7 @@
 [RealityStream](../)
-# RealityStream ML Forecasting Models
+# RealityStream Forecasting Models
 
-Our model implementations join feature and target (Y=1) data based on location IDs.  
+Our machine learning models join feature and target (Y=1) data based on location IDs.  
 Scope includes: Countries, States, County FIPS, Zip Codes, and Brain Voxels (for eye blinks).
 
 - [Run Models CoLab](../input/industries)
