@@ -24,3 +24,40 @@ In the CoLab, a select menu allows you to choose default parameter yaml paths se
 [parameters-years.yaml](https://raw.githubusercontent.com/ModelEarth/realitystream/main/parameters/parameters-years.yaml) - For testing with multiple years and states (currently same as parameters.yaml).  Uses bee populatin growth.
 [parameters-zip.yaml](https://raw.githubusercontent.com/ModelEarth/realitystream/main/parameters/parameters-zip.yaml) - Needs zip code target. Uses bee populatin growth.  
 [parameters-blinks.yaml](https://raw.githubusercontent.com/ModelEarth/realitystream/main/parameters/parameters-blinks.yaml) - Uses only features dataset (which contains the target column).
+
+<!--
+TO DO: Web page displaying US counties at risk of increased poverty - Use Google Data Commons API for FIPS county poverty target data and international target data. Pull with an [Observable Data Loader](../../../timelines/observable/)
+-->
+
+TO DO: Top ten counties in each state likely to have [declining tree canopy](/data-pipeline/research/canopy/)
+
+TO DO: Within Run Models, add python pull from Google Data Commons API for population, education levels, income/poverty levels to use as both features and targets.
+
+TO DO: Use [Tensorflow.org](https://www.tensorflow.org/js/demos) for [Neural Network predictions](https://www.tensorflow.org/s/results/?q=neural%20networks) with our training data.
+
+<!--
+### Javascript Display in Tabulator
+
+In javascript, we'll populate "Density" for each county and append it as a column in Tabulator. [Tabulator work in progress](/data-pipeline/timelines/tabulator/).
+
+Density = Population / Km2
+
+Density can also be thought of as PopPerKm2 (divided by 1000)
+100,000 people living in an 80 Km2 county = 1250 people per Km2 = Density of 1.25
+When displaying, we will multiply Density and Population by 1000.
+
+Append 0 or 1 to the "y" column. Prior y column in community forecasting: y=1 when the current year’s poverty had no decline from the prior year AND the next year’s poverty increased by 2% or more.
+
+
+Applied in
+prep/all/zcta_2016.SQL.txt
+
+-- Change from prior year is steady (0%) or increasing, change to next year is increasing by 2% or more.
+
+CASE
+      WHEN (prior1.poverty - p.poverty) >= 0 AND (p.poverty - next.poverty) >= 2 THEN 1
+      ELSE 0
+END
+
+AS y -- the povertyBinary for >= 2% in coming year, and no decline for current year.
+-->
