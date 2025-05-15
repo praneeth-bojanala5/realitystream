@@ -105,30 +105,28 @@ function yamlToUrlParams(yamlStr) {
 }
 
 // Function to create the click handler for links
-function setupLinkClickHandlers() {
-  document.addEventListener('click', function(event) {
-    // Check if the clicked element is a link
-    if (event.target.tagName === 'A') {
-      event.preventDefault();
-      
-      // Get YAML content and convert to URL parameters
-      const yamlContent = parseYamlContent();
-      const urlParams = yamlToUrlParams(yamlContent);
-      
-      // Create the final URL
-      const redirectUrl = `/data-commons/docs/data/#${urlParams}`;
-      
-      // Redirect to the new URL
-      console.log("Redirecting to:", redirectUrl);
-      window.location.href = redirectUrl;
-    }
-  });
+function goToPage(whatPage) {
+  // Check if the clicked element is a link
+  if (event.target.tagName === 'A') {
+    event.preventDefault();
+    
+    // Get YAML content and convert to URL parameters
+    const yamlContent = parseYamlContent();
+    const urlParams = yamlToUrlParams(yamlContent);
+    
+    // Create the final URL
+    const redirectUrl = whatPage + `/#${urlParams}`;
+    
+    // Redirect to the new URL
+    console.log("Redirecting to:", redirectUrl);
+    window.location.href = redirectUrl;
+  }
 }
 
 // Initialize when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   // TO DO: Reactivate, but change so the first link on the page is not going to data-commons/dods/data
-  //setupLinkClickHandlers();
+  setupLinkClickHandlers();
   console.log("YAML to URL parameter converter initialized");
 });
   </script>
@@ -260,9 +258,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <div id="readmeDiv"></div>
 
 <div style="float:right">
-  Choose: <a href="/localsite/info/">features</a> | 
-  <a href="/data-commons/docs/data/">targets</a> | 
-  <a href="models">models</a>
+  Choose: 
+  <a href="#" onclick="goToPage('models'); return false;">models</a><br>
+
+  <div class="local" style="display:none">
+    Under development: 
+    <a href="#" onclick="goToPage('/localsite/info'); return false;">features</a> | 
+    <a href="#" onclick="goToPage('/data-commons/docs/data'); return false;">targets</a>
+  </div>
 </div>
 Edit your yaml and paste into the textbox in our <a href="/realitystream/input/industries/">Run Models CoLab</a><br>
 <div id="paramText" class="codetext" rows="10" contenteditable><pre>
