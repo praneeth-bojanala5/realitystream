@@ -10,5 +10,5 @@ features:
   path: https://raw.githubusercontent.com/ModelEarth/community-timelines/main/training/naics{naics}/US/counties/{year}/US-{state}-training-naics{naics}-counties-{year}.csv
 targets:
   data: bees
-  path: https://raw.githubusercontent.com/ModelEarth/realitystream/main/input/bees/targets/bees-targets-top-20-percent.csv
+  path: https://raw.githubusercontent.com/ModelEarth/bee-data/main/targets/bees-targets-top-20-percent.csv
 models: xgboost

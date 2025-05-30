@@ -52,7 +52,7 @@ Example of parameters.yaml format:
 		endyear: 2021
 	 	path: https://raw.githubusercontent.com/ModelEarth/community-timelines/main/training/naics{naics}/US/counties/{year}/US-{state}-training-naics{naics}-counties-{year}.csv
 	targets: bees
-		path: https://github.com/ModelEarth/realitystream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
+		path: https://github.com/ModelEarth/bee-data/raw/main/targets/bees-targets-top-20-percent.csv
 	models: lr, svc, rfc, rbf, xgboost
 
 <!-- For later
@@ -82,7 +82,7 @@ That's the equivalent to:
 	features: industries
 	 	path: https://github.com/ModelEarth/realitystream/raw/main/input/industries/features/industries-features.csv
 	targets: bees
-		path: https://github.com/ModelEarth/realitystream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
+		path: https://github.com/ModelEarth/bee-data/raw/main/targets/bees-targets-top-20-percent.csv
 	models: rbf
 
 
@@ -91,7 +91,7 @@ The features.path and targets.path will have several shorthand versions and a fu
 **short** - bees  
 **medium** - input/bees/targets  
 **long** - input/bees/targets/bees-targets-top-20-percent.csv  
-**full** - https://github.com/ModelEarth/realitystream/raw/main/input/bees/targets/bees-targets-top-20-percent.csv
+**full** - https://github.com/ModelEarth/bee-data/raw/main/targets/bees-targets-top-20-percent.csv
 
 
 
