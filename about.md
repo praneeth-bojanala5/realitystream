@@ -21,7 +21,7 @@ Our default data will always use County Fips so features and targets align.
 <a href="input/industries/">Industries Input Data</a>
 
 **Bees (Target)** - County Fips
-<a href="input/bees/">Random Forest (Bees)</a>
+<a href="/bee-data/">Random Forest (Bees)</a>
 
 **Trees (Target)** - County Fips
 [Tree Targets](input/trees/)
@@ -89,8 +89,8 @@ That's the equivalent to:
 The features.path and targets.path will have several shorthand versions and a full version from GitHub:
 
 **short** - bees  
-**medium** - input/bees/targets  
-**long** - input/bees/targets/bees-targets-top-20-percent.csv  
+**medium** - /bee-data/targets  
+**long** - /bee-data/targets/bees-targets-top-20-percent.csv  
 **full** - https://github.com/ModelEarth/bee-data/raw/main/targets/bees-targets-top-20-percent.csv
 
 
@@ -98,9 +98,9 @@ The features.path and targets.path will have several shorthand versions and a fu
 **Path processing rules:**
 If there's no slash / in a path parameter, start from the root of the RealityStream repo.
 If the file extension is omitted from a path, append .csv.
-For a target value of "bees" build the path "input/bees/targets/bees-targets-top-20-percent.csv"
+For a target value of "bees" build the path "/bee-data/targets/bees-targets-top-20-percent.csv"
 Replace a space with -targets- in the path.
-So for a target value of "bees increase2024" build the path "input/bees/targets/bees-targets-increase2024.csv"
+So for a target value of "bees increase2024" build the path "/bee-data/targets/bees-targets-increase2024.csv"
 
 ## Projects
 

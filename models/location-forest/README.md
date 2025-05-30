@@ -2,4 +2,4 @@
 
 # Location Forest
 
-[For Bees](../input/bees/)
+[For Bees](../../bee-data/)

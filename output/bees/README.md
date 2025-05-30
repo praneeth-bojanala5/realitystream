@@ -1,4 +1,4 @@
-[Location Forest](../../models/location-forest/) - [Input Bees](../../input/bees/)
+[Location Forest](../../models/location-forest/) - [Input Bees](../../../bee-data/)
 
 # Bees: Location Forest
 

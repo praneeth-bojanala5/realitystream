@@ -11,7 +11,7 @@ We're using [SHAP to explain our model predictions](shap)
 
 <h2>Design your Stream</h2>
 
-**Bee YAML Updated** - Changed [bee data](input/bees) target to bees-targets-top-20-percent.csv in parameters yaml. This new "colony density" target uses the top 20% of counties with the highest bee population density (rather than top colony growth between years, as was used in bees-targets.csv).
+**Bee YAML Updated** - Changed [bee data](/bee-data) target to bees-targets-top-20-percent.csv in parameters yaml. This new "colony density" target uses the top 20% of counties with the highest bee population density (rather than top colony growth between years, as was used in bees-targets.csv).
 
 <!--
 Density file: bees-targets-top-20-percent.csv. Shashank worked from bees-population-usda.csv
