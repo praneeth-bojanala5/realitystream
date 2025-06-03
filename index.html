@@ -22,116 +22,6 @@ loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
 <body>
 
 <div class="content contentpadding">
-
-  <script>
-// Function to parse YAML content from the paramText element
-function parseYamlContent() {
-  const paramTextElement = document.getElementById('paramText');
-  const yamlContent = paramTextElement.textContent || paramTextElement.innerText;
-  return yamlContent;
-}
-
-// Function to convert YAML to URL parameters
-function yamlToUrlParams(yamlStr) {
-  // Simple YAML parser for this specific format
-  const lines = yamlStr.split('\n');
-  const params = {};
-  
-  let currentKey = null;
-  let currentIndent = 0;
-  
-  for (const line of lines) {
-    if (line.trim() === '' || line.trim().startsWith('#')) continue;
-    
-    const indent = line.search(/\S|$/);
-    const colonIndex = line.indexOf(':');
-    
-    if (colonIndex > 0) {
-      const key = line.substring(0, colonIndex).trim();
-      let value = line.substring(colonIndex + 1).trim();
-      
-      if (indent === 0) {
-        // Top level key
-        currentKey = key;
-        if (value) {
-          params[key] = value;
-        } else {
-          params[key] = {};
-        }
-      } else if (indent > currentIndent) {
-        // Sub-key
-        if (!params[currentKey]) {
-          params[currentKey] = {};
-        }
-        
-        if (value) {
-          params[currentKey][key] = value;
-        } else {
-          params[currentKey][key] = {};
-        }
-      }
-      
-      currentIndent = indent;
-    } else if (line.trim().startsWith('-')) {
-      // Handle array items
-      const value = line.trim().substring(1).trim();
-      
-      if (!Array.isArray(params[currentKey])) {
-        params[currentKey] = [];
-      }
-      
-      params[currentKey].push(value);
-    }
-  }
-  
-  // Convert to URL hash format
-  const hashParams = [];
-  
-  for (const [key, value] of Object.entries(params)) {
-    if (typeof value === 'string') {
-      hashParams.push(`${key}=${encodeURIComponent(value)}`);
-    } else if (Array.isArray(value)) {
-      hashParams.push(`${key}=${encodeURIComponent(value.join(','))}`);
-    } else if (typeof value === 'object') {
-      for (const [subKey, subValue] of Object.entries(value)) {
-        if (typeof subValue === 'string') {
-          hashParams.push(`${key}_${subKey}=${encodeURIComponent(subValue)}`);
-        }
-      }
-    }
-  }
-  
-  return hashParams.join('&');
-}
-
-// Function to create the click handler for links
-function goToPage(whatPage) {
-  // Check if the clicked element is a link
-  if (event.target.tagName === 'A') {
-    event.preventDefault();
-    
-    // Get YAML content and convert to URL parameters
-    const yamlContent = parseYamlContent();
-    const urlParams = yamlToUrlParams(yamlContent);
-    
-    // Create the final URL
-    const redirectUrl = whatPage + `/#${urlParams}`;
-    
-    // Redirect to the new URL
-    console.log("Redirecting to:", redirectUrl);
-    window.location.href = redirectUrl;
-  }
-}
-
-// Initialize when the DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // TO DO: Reactivate, but change so the first link on the page is not going to data-commons/dods/data
-  setupLinkClickHandlers();
-  console.log("YAML to URL parameter converter initialized");
-});
-  </script>
-  
-
   <style>
     #paramText {
       font-size: 0.9em;
@@ -169,9 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
             current[lastKey] = value;
         }
 
-        // Helper function to handle comma-separated values
+        // Helper function to handle comma-separated values, including encrypted commas
         function handleCommaSeparatedValue(value) {
-            if (typeof value === 'string' && value.includes(',')) {
+            if (typeof value === 'string' && value.includes('%2C')) {
+                return value.split('%2C').map(item => item.trim());
+            } else if (typeof value === 'string' && value.includes(',')) {
                 return value.split(',').map(item => item.trim());
             }
             return value;
@@ -257,13 +149,102 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div id="readmeDiv"></div>
 
+
+<script>
+// Parse YAML content from the #paramText element
+function parseYamlContent() {
+    const paramTextElement = document.getElementById('paramText');
+    const yamlContent = paramTextElement.textContent || paramTextElement.innerText;
+    return yamlContent;
+}
+
+// Function to convert YAML to URL parameters
+function yamlToUrlParams(yamlStr) {
+    // Simple YAML parser for this specific format
+    const lines = yamlStr.split('\n');
+    const params = {};
+    let currentKey = null;
+    
+    for (const line of lines) {
+        if (line.trim() === '' || line.trim().startsWith('#')) continue;
+        
+        const indent = line.search(/\S|$/);
+        const colonIndex = line.indexOf(':');
+        
+        if (colonIndex > 0) {
+            const key = line.substring(0, colonIndex).trim();
+            let value = line.substring(colonIndex + 1).trim();
+            
+            if (indent === 0) {
+                // Top level key
+                currentKey = key;
+                if (value) {
+                    params[key] = value;
+                } else {
+                    params[key] = {};
+                }
+            } else if (indent > 0 && currentKey) {
+                // Sub-key - ensure we have an object to add to
+                if (typeof params[currentKey] !== 'object' || Array.isArray(params[currentKey])) {
+                    params[currentKey] = {};
+                }
+                
+                if (value) {
+                    params[currentKey][key] = value;
+                } else {
+                    params[currentKey][key] = {};
+                }
+            }
+        } else if (line.trim().startsWith('-')) {
+            // Handle array items
+            const value = line.trim().substring(1).trim();
+            
+            if (!Array.isArray(params[currentKey])) {
+                params[currentKey] = [];
+            }
+            params[currentKey].push(value);
+        }
+    }
+    
+    // Convert to URL hash format with proper nesting and URL encoding
+    const hashParams = [];
+    
+    function addParams(obj, prefix = '') {
+        for (const [key, value] of Object.entries(obj)) {
+            const paramKey = prefix ? `${prefix}.${key}` : key;
+            
+            if (typeof value === 'string') {
+                hashParams.push(`${paramKey}=${encodeURIComponent(value)}`);
+            } else if (Array.isArray(value)) {
+                hashParams.push(`${paramKey}=${encodeURIComponent(value.join(','))}`);
+            } else if (typeof value === 'object' && value !== null) {
+                // Recursively handle nested objects
+                addParams(value, paramKey);
+            }
+        }
+    }
+    
+    addParams(params);
+    
+    const result = hashParams.join('&');
+    console.log("Generated URL parameters:", result);
+    return result;
+}
+
+// Get model parameters from textbox and pass forward in hash.
+function goToPage(whatPage) { // Only used by RealityStream/index.html
+    // Get YAML content and convert to URL parameters
+    const yamlContent = parseYamlContent();
+    const urlParams = yamlToUrlParams(yamlContent);
+
+    window.location.href = whatPage + "#" + urlParams;
+}
+</script>
 <div style="float:right">
   Choose: 
-  <a href="#" onclick="goToPage('models'); return false;">models</a><br>
-
+  <a href="#" onclick="goToPage('models'); return false;">models</a>
   <div class="local" style="display:none">
-    Under development: 
-    <a href="#" onclick="goToPage('/localsite/info'); return false;">features</a> | 
+    | <a href="#" onclick="goToPage('/localsite/info'); return false;">features</a> | 
     <a href="#" onclick="goToPage('/data-commons/docs/data'); return false;">targets</a>
   </div>
 </div>
