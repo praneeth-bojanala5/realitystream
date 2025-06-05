@@ -216,7 +216,13 @@ function yamlToUrlParams(yamlStr) {
             if (typeof value === 'string') {
                 hashParams.push(`${paramKey}=${encodeURIComponent(value)}`);
             } else if (Array.isArray(value)) {
-                hashParams.push(`${paramKey}=${encodeURIComponent(value.join(','))}`);
+                // OLD (encodes commas):
+                //hashParams.push(`${paramKey}=${encodeURIComponent(value.join(','))}`);
+
+                // NEW (preserves commas):
+                const joinedValues = value.map(v => encodeURIComponent(v)).join(',');
+                hashParams.push(`${paramKey}=${joinedValues}`);
+
             } else if (typeof value === 'object' && value !== null) {
                 // Recursively handle nested objects
                 addParams(value, paramKey);

@@ -10,27 +10,19 @@
 <script type="text/javascript" src="https://model.earth/localsite/js/localsite.js?showheader=true"></script>
 
 <script>
-loadMarkdown("README.md", "readmeDiv", "_parent");
+loadMarkdown("README.md", "readmeDiv", "_parent", 1, afterModelCheckboxesLoad);
 
-function updateModelsHash(modelName) {
-  window.location.hash = `models=${modelName}`;
-  alert(`COMING SOON: models will be updated in the URL as #models=${modelName}`);
-}
+function afterModelCheckboxesLoad() {
+  let hash = getHash();
+  const modelCheckboxes = document.querySelectorAll('input[name="model"][type="checkbox"]');
 
-function updateModel(modelName) {
-  // Uncheck all other checkboxes
-  //const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  // Parse the comma-separated list from hash.models
+  const selectedModels = hash.models ? hash.models.split(',').map(model => model.trim()) : [];
 
-  /*
-  checkboxes.forEach(checkbox => {
-    if (checkbox.id !== modelName) {
-      checkbox.checked = false;
-    }
+  // Update each checkbox based on whether its value is in the selected models list
+  modelCheckboxes.forEach(checkbox => {
+      checkbox.checked = selectedModels.includes(checkbox.value);
   });
-
-  // Update the selected model
-  selectedModel = modelName;
-  */
 }
 
 function redirectToMainPage() {
