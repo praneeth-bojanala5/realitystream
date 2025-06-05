@@ -35,7 +35,7 @@ loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
   <script>
 
     function updateYAMLFromHash(parsedContent, hash, addHashKeys) {
-        // Helper function to set nested value while preserving existing structure
+        // Sets nested yaml values for textbox while preserving existing structure
         function setNestedValue(obj, path, value) {
             const keys = path.split('.');
             const rootKey = keys[0];
@@ -51,7 +51,7 @@ loadMarkdown("input/industries/README.md", "industriesDiv", "_parent");
                 const key = keys[i];
                 // Preserve existing object or create new one if doesn't exist
                 current[key] = current[key] || {};
-                current = current[key];
+                current = decodeURIComponent(current[key]);
             }
             
             // Set the value at the final key
