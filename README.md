@@ -1,6 +1,6 @@
 Our [Run Models CoLab](input/industries) provides Logistic Regression, Support Vector Machines (SVM), MLP, XGBoost and two Random Forests.
 
-Our main input is currently industry features by county for exploring environmental impact targets.  
+Our main input is currently industry features by county ID (FIPS) for exploring environmental impact targets (like [bee data](../bee-data)).  
 We are also creating [CoLabs for Exiobase International Trade Flow](https://model.earth/profile/trade).
 
 
